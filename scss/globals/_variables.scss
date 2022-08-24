@@ -1,0 +1,42 @@
+// COLORS
+$color-dark-blue: hsl(233, 26%, 24%);
+$color-lime-green: hsl(136, 65%, 51%);
+$color-bright-cyan:  hsl(192, 70%, 51%);
+$color-grayish-blue: hsl(233, 8%, 62%);
+$color-light-grayish-blue: hsl(220, 16%, 96%);
+$color-very-light-gray: hsl(0, 0%, 98%);
+$color-white: hsl(0, 0%, 100%);
+
+// FONT WEIGHTS
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-700: 700;
+
+// LAYOUT
+$container-width: 1110px;
+$padding-desktop: 35px;
+$padding-mobile: 24px;
+
+$header-height: 80px;
+
+// Z-INDEXES
+$z-index-header: 2;
+$z-index-mockups: 1;
+
+// BUTTON
+$button-padding-y: 16px;
+$button-padding-x: 34px;
+
+// DESIGN RATIOS
+// $h1-screenshot-height-desktop: 40px;
+// $h1-screenshot-height-mobile: 29px;
+$h1-font-height-devices-ratio: 0.725;
+
+// $h2-screenshot-height-desktop: 29px;
+// $h2-screenshot-height-mobile: 23px;
+$h2-font-height-devices-ratio: 0.7;
+
+$p1-font-height-devices-ratio: 0.7857;
+
+// GRADIENT
+$bg-gradient: linear-gradient(to right, $color-lime-green, $color-bright-cyan);

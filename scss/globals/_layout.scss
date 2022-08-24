@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+.container {
+   max-width: $container-width + $padding-desktop * 2;
+   padding-inline: $padding-mobile;
+   @media (min-width: 1048px) {
+      padding-inline: $padding-desktop;
+   }
+   margin-inline: auto;
+}
+
+.section {
+   padding-block: 100px 80px;
+}
+
+body {
+   overflow-x: hidden;
+
+}
+
+%responsive-grid {
+   display: grid;
+   @media (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   @media (min-width: 900px) {
+      grid-template-columns: repeat(4, 1fr);
+   }
+}

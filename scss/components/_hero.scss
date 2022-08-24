@@ -1,0 +1,119 @@
+@use '../globals/' as *;
+@use '../utils/' as *;
+@use 'sass:math' as math;
+
+$bg-image-width: 1271px;
+$bg-image-height: 1034px;
+
+$bg-image-ratio: calc($bg-image-width / $bg-image-height);
+
+$bg-image-pos-x-multiplier: 0.49567;
+$bg-image-pos-y-multiplier: 0.24178;
+
+$bg-image-devices-multiplier: 0.6;
+
+$mockups-image-multiplier: 0.5;
+
+.hero {
+  padding-bottom: 122px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
+
+  background-color: $color-very-light-gray;
+  $bg-image-responsive-width: responsive(800px,
+      1440px,
+      $bg-image-width * $bg-image-devices-multiplier,
+      $bg-image-width );
+  $bg-image-responsive-height: responsive(800px,
+      1440px,
+      $bg-image-height * $bg-image-devices-multiplier,
+      $bg-image-height );
+
+  @media (min-width: 767px) {
+    background-image: url('/images/bg-intro-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    // $bg-image-responsive-pos-x: calc(($bg-image-responsive-width * $bg-image-pos-x-multiplier) - ((1440px - 100vw) * 0.8));
+    $bg-image-responsive-pos-x: calc(($bg-image-responsive-width * $bg-image-pos-x-multiplier));
+    $bg-image-responsive-pos-y: calc($bg-image-responsive-height * $bg-image-pos-y-multiplier * -1);
+
+    background-size: $bg-image-responsive-width $bg-image-responsive-height;
+    // background-position: $bg-image-responsive-pos-x $bg-image-responsive-pos-y;
+
+    background-position: 43vw calc($bg-image-responsive-height / 1034 * -250);
+
+    background-clip: content-box;
+  }
+
+  position: relative;
+
+  &__container {
+    display: flex;
+  }
+
+  &__content {
+    text-align: center;
+
+    @media (min-width: 767px) {
+      padding-block: responsive(800px, 1440px, 90px, 180px);
+      flex: 0 1 41%;
+      min-width: 340px;
+      text-align: left;
+    }
+
+    p {
+      margin-bottom: responsive(375px, 1440px, 36px, 40px);
+    }
+  }
+
+  &__mockups {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    clip-path: polygon(0 0, 100% 0, 100% 95.846645367%, 0% 95.846645367%);
+
+    background: url('/images/bg-intro-mobile.svg') no-repeat;
+    background-size: cover;
+    background-position: 100% 100%;
+    background-clip: polygon(0 0, 100% 0, 100% 81.54311649%, 0 81.54311649%);
+
+    margin-bottom: -20vw;
+
+    @media (min-width: 767px) {
+      position: absolute;
+      right: -9.3%;
+      top: -19%;
+      z-index: $z-index-mockups;
+      background: initial;
+    }
+
+    transform: translateY(-12%);
+
+    @media (min-width: 767px) {
+      transform: initial;
+    }
+
+    img {
+      display: block;
+      width: 80vw;
+      height: calc(80vw * $bg-image-ratio);
+
+      @media (min-width: 767px) {
+        width: responsive(767px, 1440px, calc(767px * $mockups-image-multiplier), 767px);
+        height: responsive(767px, 1440px, calc(939px * $mockups-image-multiplier), 939px);
+      }
+
+      transform: translateY(-15%);
+
+      @media (min-width: 767px) {
+        transform: initial;
+      }
+    }
+  }
+}

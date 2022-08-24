@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.bg-vlg {
+   background-color: $color-very-light-gray;
+}
+
+.bg-lgb {
+   background-color: $color-light-grayish-blue;
+}
+
+.bg-white {
+   background-color: $color-white;
+}
+
+.bg-dark-blue {
+   background-color: $color-dark-blue;
+}
+
+.text-small {
+   font-size: 0.93em;
+
+   h1 {
+      font-size: 1.3em;
+   }
+}

@@ -1,0 +1,68 @@
+@use '../globals/' as *;
+@use '../utils/' as *;
+
+$bg-image-width: 1271px;
+$bg-image-height: 1034px;
+
+$bg-image-pos-x-multiplier: 0.49567;
+$bg-image-pos-y-multiplier: 0.24178;
+
+$bg-image-devices-multiplier: 0.6;
+
+$mockups-image-multiplier: 0.39;
+
+.hero {
+	background-color: $color-very-light-gray;
+   
+   @media (min-width: 550px) {
+      background-image: url('/images/bg-intro-desktop.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+   
+      $bg-image-responsive-width: responsive(800px, 1440px, $bg-image-width * $bg-image-devices-multiplier, $bg-image-width);
+      $bg-image-responsive-height: responsive(800px, 1440px, $bg-image-height * $bg-image-devices-multiplier, $bg-image-height);
+   
+      // $bg-image-responsive-pos-x: calc(($bg-image-responsive-width * $bg-image-pos-x-multiplier) - ((1440px - 100vw) * 0.8));
+      $bg-image-responsive-pos-x: calc(($bg-image-responsive-width * $bg-image-pos-x-multiplier));
+      $bg-image-responsive-pos-y: calc($bg-image-responsive-height * $bg-image-pos-y-multiplier * -1);
+   
+      background-size: $bg-image-responsive-width $bg-image-responsive-height;
+      // background-position: $bg-image-responsive-pos-x $bg-image-responsive-pos-y;
+   
+      background-position: 43vw calc($bg-image-responsive-height / 1034 * -250);
+   
+      background-clip: content-box;
+
+   }
+
+	&__mockups {
+
+      clip-path: polygon(0 0, 100% 0, 100% 95.846645367%, 0% 95.846645367%);
+
+      background: url('/images/bg-intro-mobile.svg') no-repeat ;
+      background-size: cover;
+      background-position: 100% 100%;
+      background-clip: polygon(0 0, 100% 0, 100% 81.54311649%, 0 81.54311649%);
+      
+      @media (min-width: 550px) {
+         position: absolute;
+         right: -9.3%;
+         top: -19%;
+         z-index: $z-index-mockups;
+      }
+      transform: translateY(-12%);
+      @media (min-width: 550px) {
+         transform: initial;
+      }
+      
+      img {
+         display: block;
+         width: responsive(300px, 1440px, calc(767px * $mockups-image-multiplier), 767px);
+         height: responsive(300px, 1440px, calc(939px * $mockups-image-multiplier), 939px);
+         transform: translateY(-15%);
+         @media (min-width: 550px) {
+            transform: initial;
+         }
+      }
+	}
+}

@@ -1,0 +1,16 @@
+@use '../globals/' as *;
+
+.latest {
+	h2 {
+		text-align: center;
+      @media (min-width: 900px) {
+         text-align: left;
+      }
+	}
+
+	& .articles {
+		@extend %responsive-grid;
+      justify-items: center;
+		gap: 30px;
+	}
+}

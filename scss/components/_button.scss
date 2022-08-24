@@ -1,0 +1,14 @@
+@use '../globals' as *;
+
+.button {
+	color: $color-white;
+	font-weight: $font-weight-700;
+	&:hover {
+		filter: brightness(1.3) opacity(0.9);
+		cursor: pointer;
+	}
+
+	padding: $button-padding-y $button-padding-x;
+	background: $bg-gradient;
+	border-radius: 44px;
+}
