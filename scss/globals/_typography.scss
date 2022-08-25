@@ -13,7 +13,7 @@ a {
 
 h1, h2, h3, h4 {
    color: $color-dark-blue;
-   margin-bottom: 32px;
+   margin-bottom: responsive(375px, 1440px, 27px, 35px);
 }
 
 h1 {

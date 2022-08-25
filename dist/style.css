@@ -73,7 +73,7 @@ a {
 
 h1, h2, h3, h4 {
   color: hsl(233deg, 26%, 24%);
-  margin-bottom: 32px;
+  margin-bottom: max(27px, min((100vw - 375px) / 133.125 + 27px, 35px));
 }
 
 h1 {
@@ -181,6 +181,7 @@ p, h1, h2 {
 @media (min-width: 600px) {
   .header__links {
     visibility: visible;
+    opacity: 1;
     position: static;
     z-index: initial;
     transform: initial;
@@ -249,7 +250,7 @@ p, h1, h2 {
 }
 
 .hero {
-  padding-bottom: 122px;
+  padding-bottom: max(120px, min((100vw - 375px) / 21.3 + 120px, 170px));
   background-color: hsl(0deg, 0%, 98%);
   position: relative;
 }
@@ -332,6 +333,7 @@ p, h1, h2 {
 }
 
 .why {
+  padding-top: max(70px, min((100vw - 375px) / 24.7674418605 + 70px, 113px));
   text-align: center;
 }
 .why__container {
@@ -360,7 +362,7 @@ p, h1, h2 {
   text-align: center;
 }
 .why-column__image {
-  margin-bottom: 45px;
+  margin-bottom: max(30px, min((100vw - 375px) / 71 + 30px, 45px));
 }
 @media (min-width: 900px) {
   .why-column {

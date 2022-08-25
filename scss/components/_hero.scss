@@ -15,7 +15,7 @@ $bg-image-devices-multiplier: 0.6;
 $mockups-image-multiplier: 0.5;
 
 .hero {
-  padding-bottom: 122px;
+  padding-bottom: responsive(375px, 1440px, 120px, 170px);
 
   @media (min-width: 768px) {
     padding-bottom: 0;
