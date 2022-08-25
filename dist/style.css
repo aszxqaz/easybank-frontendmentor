@@ -152,6 +152,11 @@ p, h1, h2 {
   z-index: 2;
   background: white;
 }
+@media (min-width: 600px) {
+  .header {
+    position: relative;
+  }
+}
 .header__logo img {
   display: block;
 }
@@ -250,7 +255,7 @@ p, h1, h2 {
 }
 
 .hero {
-  padding-bottom: max(120px, min((100vw - 375px) / 21.3 + 120px, 170px));
+  padding-bottom: max(80px, min((100vw - 375px) / 11.8333333333 + 80px, 170px));
   background-color: hsl(0deg, 0%, 98%);
   position: relative;
 }
